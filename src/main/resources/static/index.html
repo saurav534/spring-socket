@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Sockets Example</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12 socket-heading">
+                    <h4>Start a WebSocket Connection</h4>
+                </div>
+                <div class="col-xs-6">
+                    <button id="connect-btn" class="btn btn-primary">Connect</button>
+                </div>
+                <div class="col-xs-6">
+                    <button id="disconnect-btn" class="btn btn-danger" disabled>Disconnect</button>
+                </div>
+                <div id="socket-connected" style="display: none" class="col-xs-12">
+                    Socket Connection Established
+                </div>
+                <div id="socket-disconnected" class="col-xs-12">
+                    Socket Not Connected !
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12 message-heading">
+                    <h4>Send a New Message</h4>
+                </div>
+                <div class="col-xs-6">
+                    <input id="msg1" class="form-control" placeholder="message type 1 ...">
+                </div>
+                <div class="col-xs-6">
+                    <button id="msg-btn1" class="btn btn-success">Send Type 1</button>
+                </div>
+                <div class="col-xs-12">
+                    <br>
+                </div>
+                <div class="col-xs-6">
+                    <input id="msg2" class="form-control" placeholder="message type 2 ...">
+                </div>
+                <div class="col-xs-6">
+                    <button id="msg-btn2" class="btn btn-success">Send Type 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="conversation" style="display: none">
+        <div class="col-xs-12">
+            <h5>Messages</h5>
+        </div>
+        <div class="col-xs-12">
+            <table class="table table-striped">
+                <thead>
+                    <th></th>
+                </thead>
+                <tbody id="msg-list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

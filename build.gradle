@@ -27,5 +27,9 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('org.springframework.boot:spring-boot-starter-websocket')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	compile("org.webjars:webjars-locator-core")
+	compile("org.webjars:sockjs-client:1.0.2")
+	compile("org.webjars:stomp-websocket:2.3.3")
+	compile("org.webjars:jquery:3.1.0")
+	compile("org.webjars:bootstrap:3.3.7")
 }
